@@ -462,8 +462,7 @@
 					"ignoreEmptyBlobs": true,
 					"scope": "[parameters('blob_parquet_event_trigger_properties_typeProperties_scope')]",
 					"events": [
-						"Microsoft.Storage.BlobCreated",
-						"Microsoft.Storage.BlobDeleted"
+						"Microsoft.Storage.BlobCreated"
 					]
 				}
 			},
