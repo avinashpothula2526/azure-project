@@ -5,6 +5,12 @@
 		"factoryName": {
 			"value": "adf-dev-ecom-us"
 		},
+		"DS_BLOB_PARQ_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_BLOB_PARQ_connectionString": {
+			"value": ""
+		},
 		"lsSqlServer1_password": {
 			"value": ""
 		},
@@ -14,11 +20,8 @@
 		"ls_rst_parq_accountKey": {
 			"value": ""
 		},
-		"LS_BLOB_PARQ_connectionString": {
-			"value": ""
-		},
-		"DS_BLOB_PARQ_OUTPUT_accountKey": {
-			"value": ""
+		"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
+			"value": "https://adlssidevecom.dfs.core.windows.net/"
 		},
 		"lsSqlServer1_properties_typeProperties_server": {
 			"value": "LAPTOP-4HCP6U74"
@@ -36,9 +39,6 @@
 			"value": "https://adlssidevecom.dfs.core.windows.net/"
 		},
 		"ls_rst_parq_properties_typeProperties_url": {
-			"value": "https://adlssidevecom.dfs.core.windows.net/"
-		},
-		"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
 			"value": "https://adlssidevecom.dfs.core.windows.net/"
 		},
 		"blob_parquet_event_trigger_properties_typeProperties_scope": {

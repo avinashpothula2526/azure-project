@@ -7,6 +7,14 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-dev-ecom-us"
 		},
+		"DS_BLOB_PARQ_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_BLOB_PARQ_OUTPUT'"
+		},
+		"LS_BLOB_PARQ_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_PARQ'"
+		},
 		"lsSqlServer1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'lsSqlServer1'"
@@ -19,13 +27,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_rst_parq'"
 		},
-		"LS_BLOB_PARQ_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_PARQ'"
-		},
-		"DS_BLOB_PARQ_OUTPUT_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'DS_BLOB_PARQ_OUTPUT'"
+		"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
 		},
 		"lsSqlServer1_properties_typeProperties_server": {
 			"type": "string",
@@ -48,10 +52,6 @@
 			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
 		},
 		"ls_rst_parq_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
-		},
-		"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
 		},
@@ -86,20 +86,23 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"DS_BLOB_PARQ_OUTPUT_accountKey": {
+						"value": "[parameters('DS_BLOB_PARQ_OUTPUT_accountKey')]"
+					},
+					"LS_BLOB_PARQ_connectionString": {
+						"value": "[parameters('LS_BLOB_PARQ_connectionString')]"
+					},
 					"ls_rest_parq_output_accountKey": {
 						"value": "[parameters('ls_rest_parq_output_accountKey')]"
 					},
 					"ls_rst_parq_accountKey": {
 						"value": "[parameters('ls_rst_parq_accountKey')]"
 					},
-					"LS_BLOB_PARQ_connectionString": {
-						"value": "[parameters('LS_BLOB_PARQ_connectionString')]"
-					},
-					"DS_BLOB_PARQ_OUTPUT_accountKey": {
-						"value": "[parameters('DS_BLOB_PARQ_OUTPUT_accountKey')]"
-					},
 					"lsSqlServer1_password": {
 						"value": "[parameters('lsSqlServer1_password')]"
+					},
+					"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
+						"value": "[parameters('DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url')]"
 					},
 					"ls_rest_paeq_properties_typeProperties_url": {
 						"value": "[parameters('ls_rest_paeq_properties_typeProperties_url')]"
@@ -109,9 +112,6 @@
 					},
 					"ls_rst_parq_properties_typeProperties_url": {
 						"value": "[parameters('ls_rst_parq_properties_typeProperties_url')]"
-					},
-					"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
-						"value": "[parameters('DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url')]"
 					},
 					"lsSqlServer1_properties_typeProperties_server": {
 						"value": "[parameters('lsSqlServer1_properties_typeProperties_server')]"
