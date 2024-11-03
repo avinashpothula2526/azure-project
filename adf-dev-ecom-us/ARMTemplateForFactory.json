@@ -952,7 +952,7 @@
 					"ignoreEmptyBlobs": true,
 					"scope": "[parameters('ADLS_PARQ_EVENT_TRIGGER_properties_typeProperties_scope')]",
 					"events": [
-						"Microsoft.Storage.BlobDeleted"
+						"Microsoft.Storage.BlobCreated"
 					]
 				}
 			},
