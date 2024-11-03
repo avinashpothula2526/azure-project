@@ -1,0 +1,19 @@
+{
+	"name": "DS_ADLS_PARQ_EVENT_OUTPUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_PARQ_EVENT_OUTPUT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "payments"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

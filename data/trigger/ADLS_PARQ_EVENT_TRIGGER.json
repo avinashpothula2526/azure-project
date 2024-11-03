@@ -1,0 +1,24 @@
+{
+	"name": "ADLS_PARQ_EVENT_TRIGGER",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_ADLS_PARQ_EVENT",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/payments/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/a50df529-8add-4c83-ab86-edb0b37fa963/resourceGroups/rg_dev_ecom/providers/Microsoft.Storage/storageAccounts/adlsrawdevecom",
+			"events": [
+				"Microsoft.Storage.BlobDeleted"
+			]
+		}
+	}
+}
