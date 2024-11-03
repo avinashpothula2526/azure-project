@@ -1,0 +1,105 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-dev-ecom-us"
+		},
+		"lsSqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'lsSqlServer1'"
+		},
+		"ls_rest_parq_output_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_rest_parq_output'"
+		},
+		"ls_rst_parq_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_rst_parq'"
+		},
+		"lsSqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "LAPTOP-4HCP6U74"
+		},
+		"lsSqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "master"
+		},
+		"lsSqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "LAPTOP-4HCP6U74\\Phani"
+		},
+		"ls_rest_paeq_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/smdCCy/data"
+		},
+		"ls_rest_parq_output_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
+		},
+		"ls_rst_parq_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-dev-ecom-us_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_rest_parq_output_accountKey": {
+						"value": "[parameters('ls_rest_parq_output_accountKey')]"
+					},
+					"ls_rst_parq_accountKey": {
+						"value": "[parameters('ls_rst_parq_accountKey')]"
+					},
+					"lsSqlServer1_password": {
+						"value": "[parameters('lsSqlServer1_password')]"
+					},
+					"ls_rest_paeq_properties_typeProperties_url": {
+						"value": "[parameters('ls_rest_paeq_properties_typeProperties_url')]"
+					},
+					"ls_rest_parq_output_properties_typeProperties_url": {
+						"value": "[parameters('ls_rest_parq_output_properties_typeProperties_url')]"
+					},
+					"ls_rst_parq_properties_typeProperties_url": {
+						"value": "[parameters('ls_rst_parq_properties_typeProperties_url')]"
+					},
+					"lsSqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('lsSqlServer1_properties_typeProperties_server')]"
+					},
+					"lsSqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('lsSqlServer1_properties_typeProperties_database')]"
+					},
+					"lsSqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('lsSqlServer1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
