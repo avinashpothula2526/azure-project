@@ -14,6 +14,12 @@
 		"ls_rst_parq_accountKey": {
 			"value": ""
 		},
+		"LS_BLOB_PARQ_connectionString": {
+			"value": ""
+		},
+		"DS_BLOB_PARQ_OUTPUT_accountKey": {
+			"value": ""
+		},
 		"lsSqlServer1_properties_typeProperties_server": {
 			"value": "LAPTOP-4HCP6U74"
 		},
@@ -31,6 +37,12 @@
 		},
 		"ls_rst_parq_properties_typeProperties_url": {
 			"value": "https://adlssidevecom.dfs.core.windows.net/"
+		},
+		"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
+			"value": "https://adlssidevecom.dfs.core.windows.net/"
+		},
+		"blob_parquet_event_trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/a50df529-8add-4c83-ab86-edb0b37fa963/resourceGroups/rg_dev_ecom/providers/Microsoft.Storage/storageAccounts/blobrawdevecom"
 		},
 		"containerUri": {
 			"value": ""
