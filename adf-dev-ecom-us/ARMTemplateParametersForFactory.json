@@ -32,6 +32,12 @@
 		"LS_ADLS_PARQ_EVENT_OUTPUT_accountKey": {
 			"value": ""
 		},
+		"LS_ADLS_PARQ_SCHEDULED_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_PARQ_SCHEDULED_OUTPUT_accountKey": {
+			"value": ""
+		},
 		"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
 			"value": "https://adlssidevecom.dfs.core.windows.net/"
 		},
@@ -67,6 +73,12 @@
 		},
 		"ADLS_PARQ_EVENT_TRIGGER_properties_typeProperties_scope": {
 			"value": "/subscriptions/a50df529-8add-4c83-ab86-edb0b37fa963/resourceGroups/rg_dev_ecom/providers/Microsoft.Storage/storageAccounts/adlsrawdevecom"
+		},
+		"LS_ADLS_PARQ_SCHEDULED_properties_typeProperties_url": {
+			"value": "https://adlsrawdevecom.dfs.core.windows.net/"
+		},
+		"LS_ADLS_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
+			"value": "https://adlssidevecom.dfs.core.windows.net/"
 		}
 	}
 }

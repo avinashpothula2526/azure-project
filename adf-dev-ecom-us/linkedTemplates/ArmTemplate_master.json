@@ -43,6 +43,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_EVENT_OUTPUT'"
 		},
+		"LS_ADLS_PARQ_SCHEDULED_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_SCHEDULED'"
+		},
+		"LS_ADLS_PARQ_SCHEDULED_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_SCHEDULED_OUTPUT'"
+		},
 		"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
@@ -90,6 +98,14 @@
 		"ADLS_PARQ_EVENT_TRIGGER_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/a50df529-8add-4c83-ab86-edb0b37fa963/resourceGroups/rg_dev_ecom/providers/Microsoft.Storage/storageAccounts/adlsrawdevecom"
+		},
+		"LS_ADLS_PARQ_SCHEDULED_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsrawdevecom.dfs.core.windows.net/"
+		},
+		"LS_ADLS_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -142,6 +158,12 @@
 					"LS_ADLS_PARQ_EVENT_OUTPUT_accountKey": {
 						"value": "[parameters('LS_ADLS_PARQ_EVENT_OUTPUT_accountKey')]"
 					},
+					"LS_ADLS_PARQ_SCHEDULED_accountKey": {
+						"value": "[parameters('LS_ADLS_PARQ_SCHEDULED_accountKey')]"
+					},
+					"LS_ADLS_PARQ_SCHEDULED_OUTPUT_accountKey": {
+						"value": "[parameters('LS_ADLS_PARQ_SCHEDULED_OUTPUT_accountKey')]"
+					},
 					"lsSqlServer1_password": {
 						"value": "[parameters('lsSqlServer1_password')]"
 					},
@@ -165,6 +187,12 @@
 					},
 					"LS_ADLS_PARQ_EVENT_OUTPUT_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_PARQ_EVENT_OUTPUT_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_PARQ_SCHEDULED_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_PARQ_SCHEDULED_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url')]"
 					},
 					"lsSqlServer1_properties_typeProperties_server": {
 						"value": "[parameters('lsSqlServer1_properties_typeProperties_server')]"
