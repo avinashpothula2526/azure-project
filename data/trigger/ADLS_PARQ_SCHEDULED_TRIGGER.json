@@ -1,0 +1,24 @@
+{
+	"name": "ADLS_PARQ_SCHEDULED_TRIGGER",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_ADLS_PARQ_SCHEDULED",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-11-02T08:52:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"name": "DS_ADLS_PARQ_SCHEDULED_OUTPUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_PARQ_SCHEDULED_OUTPUT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "order-items"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
