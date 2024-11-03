@@ -11,6 +11,12 @@
 		"LS_BLOB_PARQ_connectionString": {
 			"value": ""
 		},
+		"LS_BLOB_PARQ_SCHEDULED_connectionString": {
+			"value": ""
+		},
+		"LS_BLOB_PARQ_SCHEDULED_OUTPUT_accountKey": {
+			"value": ""
+		},
 		"lsSqlServer1_password": {
 			"value": ""
 		},
@@ -21,6 +27,9 @@
 			"value": ""
 		},
 		"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
+			"value": "https://adlssidevecom.dfs.core.windows.net/"
+		},
+		"LS_BLOB_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
 			"value": "https://adlssidevecom.dfs.core.windows.net/"
 		},
 		"lsSqlServer1_properties_typeProperties_server": {

@@ -15,6 +15,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_PARQ'"
 		},
+		"LS_BLOB_PARQ_SCHEDULED_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_PARQ_SCHEDULED'"
+		},
+		"LS_BLOB_PARQ_SCHEDULED_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BLOB_PARQ_SCHEDULED_OUTPUT'"
+		},
 		"lsSqlServer1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'lsSqlServer1'"
@@ -28,6 +36,10 @@
 			"metadata": "Secure string for 'accountKey' of 'ls_rst_parq'"
 		},
 		"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
+		},
+		"LS_BLOB_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
 		},
@@ -92,6 +104,12 @@
 					"LS_BLOB_PARQ_connectionString": {
 						"value": "[parameters('LS_BLOB_PARQ_connectionString')]"
 					},
+					"LS_BLOB_PARQ_SCHEDULED_connectionString": {
+						"value": "[parameters('LS_BLOB_PARQ_SCHEDULED_connectionString')]"
+					},
+					"LS_BLOB_PARQ_SCHEDULED_OUTPUT_accountKey": {
+						"value": "[parameters('LS_BLOB_PARQ_SCHEDULED_OUTPUT_accountKey')]"
+					},
 					"ls_rest_parq_output_accountKey": {
 						"value": "[parameters('ls_rest_parq_output_accountKey')]"
 					},
@@ -103,6 +121,9 @@
 					},
 					"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
 						"value": "[parameters('DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url')]"
+					},
+					"LS_BLOB_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
+						"value": "[parameters('LS_BLOB_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url')]"
 					},
 					"ls_rest_paeq_properties_typeProperties_url": {
 						"value": "[parameters('ls_rest_paeq_properties_typeProperties_url')]"
@@ -128,6 +149,26 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "adf-dev-ecom-us_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-dev-ecom-us_ArmTemplate_0')]"
+			]
 		}
 	]
 }
