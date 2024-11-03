@@ -17,7 +17,7 @@
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/a50df529-8add-4c83-ab86-edb0b37fa963/resourceGroups/rg_dev_ecom/providers/Microsoft.Storage/storageAccounts/adlsrawdevecom",
 			"events": [
-				"Microsoft.Storage.BlobDeleted"
+				"Microsoft.Storage.BlobCreated"
 			]
 		}
 	}
