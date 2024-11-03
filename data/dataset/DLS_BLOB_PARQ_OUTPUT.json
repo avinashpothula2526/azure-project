@@ -1,0 +1,19 @@
+{
+	"name": "DLS_BLOB_PARQ_OUTPUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_BLOB_PARQ_OUTPUT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "products"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
