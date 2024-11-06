@@ -11,6 +11,22 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DS_BLOB_PARQ_OUTPUT'"
 		},
+		"LS_ADLS_PARQ_EVENT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_EVENT'"
+		},
+		"LS_ADLS_PARQ_EVENT_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_EVENT_OUTPUT'"
+		},
+		"LS_ADLS_PARQ_SCHEDULED_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_SCHEDULED'"
+		},
+		"LS_ADLS_PARQ_SCHEDULED_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_SCHEDULED_OUTPUT'"
+		},
 		"LS_BLOB_PARQ_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_PARQ'"
@@ -35,23 +51,35 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_rst_parq'"
 		},
-		"LS_ADLS_PARQ_EVENT_accountKey": {
+		"ls_output_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_EVENT'"
+			"metadata": "Secure string for 'accountKey' of 'ls_output'"
 		},
-		"LS_ADLS_PARQ_EVENT_OUTPUT_accountKey": {
+		"ls_output_files_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_EVENT_OUTPUT'"
+			"metadata": "Secure string for 'accountKey' of 'ls_output_files'"
 		},
-		"LS_ADLS_PARQ_SCHEDULED_accountKey": {
+		"ls_move_output_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_SCHEDULED'"
-		},
-		"LS_ADLS_PARQ_SCHEDULED_OUTPUT_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ_SCHEDULED_OUTPUT'"
+			"metadata": "Secure string for 'accountKey' of 'ls_move_output'"
 		},
 		"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
+		},
+		"LS_ADLS_PARQ_EVENT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsrawdevecom.dfs.core.windows.net/"
+		},
+		"LS_ADLS_PARQ_EVENT_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
+		},
+		"LS_ADLS_PARQ_SCHEDULED_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsrawdevecom.dfs.core.windows.net/"
+		},
+		"LS_ADLS_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
 		},
@@ -83,27 +111,23 @@
 			"type": "string",
 			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
 		},
-		"blob_parquet_event_trigger_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/a50df529-8add-4c83-ab86-edb0b37fa963/resourceGroups/rg_dev_ecom/providers/Microsoft.Storage/storageAccounts/blobrawdevecom"
-		},
-		"LS_ADLS_PARQ_EVENT_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsrawdevecom.dfs.core.windows.net/"
-		},
-		"LS_ADLS_PARQ_EVENT_OUTPUT_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
-		},
 		"ADLS_PARQ_EVENT_TRIGGER_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/a50df529-8add-4c83-ab86-edb0b37fa963/resourceGroups/rg_dev_ecom/providers/Microsoft.Storage/storageAccounts/adlsrawdevecom"
 		},
-		"LS_ADLS_PARQ_SCHEDULED_properties_typeProperties_url": {
+		"blob_parquet_event_trigger_properties_typeProperties_scope": {
 			"type": "string",
-			"defaultValue": "https://adlsrawdevecom.dfs.core.windows.net/"
+			"defaultValue": "/subscriptions/a50df529-8add-4c83-ab86-edb0b37fa963/resourceGroups/rg_dev_ecom/providers/Microsoft.Storage/storageAccounts/blobrawdevecom"
 		},
-		"LS_ADLS_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
+		"ls_output_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
+		},
+		"ls_output_files_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
+		},
+		"ls_move_output_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlssidevecom.dfs.core.windows.net/"
 		},
@@ -137,6 +161,18 @@
 					"DS_BLOB_PARQ_OUTPUT_accountKey": {
 						"value": "[parameters('DS_BLOB_PARQ_OUTPUT_accountKey')]"
 					},
+					"LS_ADLS_PARQ_EVENT_accountKey": {
+						"value": "[parameters('LS_ADLS_PARQ_EVENT_accountKey')]"
+					},
+					"LS_ADLS_PARQ_EVENT_OUTPUT_accountKey": {
+						"value": "[parameters('LS_ADLS_PARQ_EVENT_OUTPUT_accountKey')]"
+					},
+					"LS_ADLS_PARQ_SCHEDULED_accountKey": {
+						"value": "[parameters('LS_ADLS_PARQ_SCHEDULED_accountKey')]"
+					},
+					"LS_ADLS_PARQ_SCHEDULED_OUTPUT_accountKey": {
+						"value": "[parameters('LS_ADLS_PARQ_SCHEDULED_OUTPUT_accountKey')]"
+					},
 					"LS_BLOB_PARQ_connectionString": {
 						"value": "[parameters('LS_BLOB_PARQ_connectionString')]"
 					},
@@ -152,35 +188,17 @@
 					"ls_rst_parq_accountKey": {
 						"value": "[parameters('ls_rst_parq_accountKey')]"
 					},
-					"LS_ADLS_PARQ_EVENT_accountKey": {
-						"value": "[parameters('LS_ADLS_PARQ_EVENT_accountKey')]"
+					"ls_output_accountKey": {
+						"value": "[parameters('ls_output_accountKey')]"
 					},
-					"LS_ADLS_PARQ_EVENT_OUTPUT_accountKey": {
-						"value": "[parameters('LS_ADLS_PARQ_EVENT_OUTPUT_accountKey')]"
+					"ls_output_files_accountKey": {
+						"value": "[parameters('ls_output_files_accountKey')]"
 					},
-					"LS_ADLS_PARQ_SCHEDULED_accountKey": {
-						"value": "[parameters('LS_ADLS_PARQ_SCHEDULED_accountKey')]"
-					},
-					"LS_ADLS_PARQ_SCHEDULED_OUTPUT_accountKey": {
-						"value": "[parameters('LS_ADLS_PARQ_SCHEDULED_OUTPUT_accountKey')]"
-					},
-					"lsSqlServer1_password": {
-						"value": "[parameters('lsSqlServer1_password')]"
+					"ls_move_output_accountKey": {
+						"value": "[parameters('ls_move_output_accountKey')]"
 					},
 					"DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url": {
 						"value": "[parameters('DS_BLOB_PARQ_OUTPUT_properties_typeProperties_url')]"
-					},
-					"LS_BLOB_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
-						"value": "[parameters('LS_BLOB_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url')]"
-					},
-					"ls_rest_paeq_properties_typeProperties_url": {
-						"value": "[parameters('ls_rest_paeq_properties_typeProperties_url')]"
-					},
-					"ls_rest_parq_output_properties_typeProperties_url": {
-						"value": "[parameters('ls_rest_parq_output_properties_typeProperties_url')]"
-					},
-					"ls_rst_parq_properties_typeProperties_url": {
-						"value": "[parameters('ls_rst_parq_properties_typeProperties_url')]"
 					},
 					"LS_ADLS_PARQ_EVENT_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_PARQ_EVENT_properties_typeProperties_url')]"
@@ -194,14 +212,26 @@
 					"LS_ADLS_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url')]"
 					},
-					"lsSqlServer1_properties_typeProperties_server": {
-						"value": "[parameters('lsSqlServer1_properties_typeProperties_server')]"
+					"LS_BLOB_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url": {
+						"value": "[parameters('LS_BLOB_PARQ_SCHEDULED_OUTPUT_properties_typeProperties_url')]"
 					},
-					"lsSqlServer1_properties_typeProperties_database": {
-						"value": "[parameters('lsSqlServer1_properties_typeProperties_database')]"
+					"ls_rest_paeq_properties_typeProperties_url": {
+						"value": "[parameters('ls_rest_paeq_properties_typeProperties_url')]"
 					},
-					"lsSqlServer1_properties_typeProperties_userName": {
-						"value": "[parameters('lsSqlServer1_properties_typeProperties_userName')]"
+					"ls_rest_parq_output_properties_typeProperties_url": {
+						"value": "[parameters('ls_rest_parq_output_properties_typeProperties_url')]"
+					},
+					"ls_rst_parq_properties_typeProperties_url": {
+						"value": "[parameters('ls_rst_parq_properties_typeProperties_url')]"
+					},
+					"ls_output_properties_typeProperties_url": {
+						"value": "[parameters('ls_output_properties_typeProperties_url')]"
+					},
+					"ls_output_files_properties_typeProperties_url": {
+						"value": "[parameters('ls_output_files_properties_typeProperties_url')]"
+					},
+					"ls_move_output_properties_typeProperties_url": {
+						"value": "[parameters('ls_move_output_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -221,11 +251,23 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"blob_parquet_event_trigger_properties_typeProperties_scope": {
-						"value": "[parameters('blob_parquet_event_trigger_properties_typeProperties_scope')]"
+					"lsSqlServer1_password": {
+						"value": "[parameters('lsSqlServer1_password')]"
+					},
+					"lsSqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('lsSqlServer1_properties_typeProperties_server')]"
+					},
+					"lsSqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('lsSqlServer1_properties_typeProperties_database')]"
+					},
+					"lsSqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('lsSqlServer1_properties_typeProperties_userName')]"
 					},
 					"ADLS_PARQ_EVENT_TRIGGER_properties_typeProperties_scope": {
 						"value": "[parameters('ADLS_PARQ_EVENT_TRIGGER_properties_typeProperties_scope')]"
+					},
+					"blob_parquet_event_trigger_properties_typeProperties_scope": {
+						"value": "[parameters('blob_parquet_event_trigger_properties_typeProperties_scope')]"
 					}
 				}
 			},
